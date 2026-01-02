@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prague Meetup Countdown</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <div class="top">
+          <h1 class="title">Prague Meetup</h1>
+
+          <div class="badge">
+            <span class="dot"></span>
+            <span id="statusText">COUNTDOWN</span>
+          </div>
+        </div>
+
+        <div id="countdown" class="timer">--:--:--</div>
+
+        <div class="divider"></div>
+
+        <!-- clocks -->
+        <div class="clocks">
+          <div class="clock">
+            <div class="city">
+              <span class="name">부천</span>
+              <span class="tz">Asia/Seoul</span>
+            </div>
+            <div id="t-seoul" class="time">--</div>
+            <div id="d-seoul" class="date">--</div>
+          </div>
+
+          <div class="clock">
+            <div class="city">
+              <span class="name">Praha</span>
+              <span class="tz">Europe/Prague</span>
+            </div>
+            <div id="t-prague" class="time">--</div>
+            <div id="d-prague" class="date">--</div>
+          </div>
+
+          <div class="clock">
+            <div class="city">
+              <span class="name">Nürnberg</span>
+              <span class="tz">Europe/Berlin</span>
+            </div>
+            <div id="t-berlin" class="time">--</div>
+            <div id="d-berlin" class="date">--</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- journey -->
+        <div class="journey">
+          <div class="journeyTop">
+            <span class="journeyTitle">Journey</span>
+            <span id="journeyStatus" class="journeyStatus">Not started</span>
+          </div>
+
+          <div class="track" id="track">
+            <div class="marker m0">
+              <div class="dot2"></div>
+              <div class="label2">ICN</div>
+            </div>
+
+            <div class="marker m1">
+              <div class="dot2"></div>
+              <div class="label2">IST</div>
+            </div>
+
+            <div class="marker m2">
+              <div class="dot2"></div>
+              <div class="label2">PRG</div>
+            </div>
+
+            <div id="plane" class="plane" aria-hidden="true">✈️</div>
+          </div>
+
+          <div class="timesRow" aria-label="Flight times">
+            <div class="timeCell left">00:10</div>
+            <div class="timeCell mid">05:55 / 08:00</div>
+            <div class="timeCell right">08:40</div>
+          </div>
+
+          <div id="journeyHint" class="journeyHint">Waiting at ICN</div>
+        </div>
+
+        <div class="footer">
+          Countdown to: <strong>2026-01-08 08:40 (Prague)</strong>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
