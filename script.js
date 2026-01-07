@@ -29,7 +29,9 @@ function partsInTZ(date, tz) {
 }
 
 function localToUTCms(l, tz) {
-  let g = Date.UTC(l.y, l.m - 1, l.d, l.h, l.min, l.s);
+  const base = Date.UTC(l.y, l.m - 1, l.d, l.h, l.min, l.s);
+  let g = base;
+
   for (let i = 0; i < 2; i++) {
     const p = partsInTZ(new Date(g), tz);
     const asUTC = Date.UTC(
@@ -40,8 +42,10 @@ function localToUTCms(l, tz) {
       +p.minute,
       +p.second
     );
-    g -= asUTC - g;
+    const offset = asUTC - g;
+    g = base - offset;
   }
+
   return g;
 }
 
