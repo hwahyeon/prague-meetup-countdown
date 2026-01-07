@@ -22,6 +22,7 @@ function partsInTZ(date, tz) {
     minute: "2-digit",
     second: "2-digit",
     hour12: false,
+    hourCycle: "h23",
   });
   return Object.fromEntries(
     f.formatToParts(date).map((p) => [p.type, p.value])
@@ -70,8 +71,8 @@ function setClock(now, tz, tId, dId) {
 function tick() {
   const now = new Date();
   setClock(now, TZ_SEOUL, "t-seoul", "d-seoul");
+  setClock(now, TZ_IST, "t-istanbul", "d-istanbul");
   setClock(now, TZ_PRG, "t-prague", "d-prague");
-  setClock(now, TZ_BERLIN, "t-berlin", "d-berlin");
 
   const diff = TARGET_UTC - now.getTime();
   const cd = document.getElementById("countdown");
