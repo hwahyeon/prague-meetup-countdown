@@ -91,8 +91,6 @@ function tick() {
   )}:${pad(s % 60)}`;
 
   cd.textContent = days > 0 ? `${days} ${dayLabel} · ${time}` : time;
-
-  updateJourney(now.getTime());
 }
 
 function updateJourney(now) {
@@ -137,4 +135,5 @@ function updateJourney(now) {
 }
 
 tick();
+updateJourney(Date.now());
 setInterval(tick, 1000);
