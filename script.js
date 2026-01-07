@@ -134,6 +134,11 @@ function updateJourney(now) {
   hint.textContent = "Welcome to Prague";
 }
 
+function updateJourneyOnce() {
+  updateJourney(Date.now());
+}
+
 tick();
-updateJourney(Date.now());
+updateJourneyOnce();
 setInterval(tick, 1000);
+setInterval(updateJourneyOnce, 5 * 60 * 1000);
